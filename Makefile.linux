@@ -12,13 +12,13 @@ clean:
 	-rm evenodds.elf
 
 makelkup.elf: makelkup.c
-	$(CC) $(CFLAG) -o $@ $<
+	$(CC) $(CCFLAG) -o $@ $<
 	
 evenoddl.elf: evenodds.lut evenoddl.c
-	$(CC) $(CFLAG) -o $@ evenoddl.c
+	$(CC) $(CCFLAG) -o $@ evenoddl.c
 
 evenodds.lut: makelkup.elf
 	./makelkup.elf
 
 evenodds.elf: evenodds.c
-	$(CC) $(CFLAG) -o $@ evenodds.c
+	$(CC) $(CCFLAG) -o $@ evenodds.c

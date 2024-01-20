@@ -12,13 +12,13 @@ clean:
 	-rm -f evenodds.exe
 
 makelkup.exe: makelkup.c
-	$(CC) $(CFLAG) -o $@ $<
+	$(CC) $(CCFLAG) -o $@ $<
 	
 evenoddl.exe: evenodds.lut evenoddl.c
-	$(CC) $(CFLAG) -o $@ evenoddl.c
+	$(CC) $(CCFLAG) -o $@ evenoddl.c
 
 evenodds.lut: makelkup.exe
 	./makelkup.exe
 
 evenodds.exe: evenodds.c
-	$(CC) $(CFLAG) -o $@ evenodds.c
+	$(CC) $(CCFLAG) -o $@ evenodds.c
