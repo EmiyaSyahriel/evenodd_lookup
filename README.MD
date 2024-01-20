@@ -17,7 +17,7 @@ make
 > Makefile will automatically detect OS you're compiling in
 
 ### Command (Manual)
-> You can subtitute the `exe` to `elf`` if you are in linux
+> You can substitute the `exe` to `elf` if you are in linux
 ```shell
 tcc -o makelkup.exe makelkup.c
 ./makelkup.exe
@@ -26,7 +26,7 @@ tcc -o evenoddl.exe evenoddl.c
 ```
 
 ## Usages
-> You can subtitute the `exe` to `elf`` if you are in linux
+> You can substitute the `exe` to `elf` if you are in linux
 ### `makelkup.exe`
 Generates the lookup table
 
