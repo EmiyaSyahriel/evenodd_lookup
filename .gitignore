@@ -1,0 +1,7 @@
+*.lut
+*.exe
+*.elf
+*.o
+
+.vscode/
+.vs

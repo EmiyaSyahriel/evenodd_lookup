@@ -1,0 +1,24 @@
+CC := tcc
+CCFLAG :=
+
+.PHONY: all clean
+
+all: evenoddl.elf evenodds.elf evenodds.lut
+
+clean:
+	-rm evenodds.lut
+	-rm makelkup.elf
+	-rm evenoddl.elf
+	-rm evenodds.elf
+
+makelkup.elf: makelkup.c
+	$(CC) $(CFLAG) -o $@ $<
+	
+evenoddl.elf: evenodds.lut evenoddl.c
+	$(CC) $(CFLAG) -o $@ evenoddl.c
+
+evenodds.lut: makelkup.elf
+	./makelkup.elf
+
+evenodds.elf: evenodds.c
+	$(CC) $(CFLAG) -o $@ evenodds.c

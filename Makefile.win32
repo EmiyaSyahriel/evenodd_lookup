@@ -1,0 +1,24 @@
+CC := tcc
+CCFLAG := 
+
+.PHONY: all clean
+
+all: evenoddl.exe evenodds.exe evenodds.lut
+
+clean:
+	-rm -f evenodds.lut
+	-rm -f makelkup.exe
+	-rm -f evenoddl.exe
+	-rm -f evenodds.exe
+
+makelkup.exe: makelkup.c
+	$(CC) $(CFLAG) -o $@ $<
+	
+evenoddl.exe: evenodds.lut evenoddl.c
+	$(CC) $(CFLAG) -o $@ evenoddl.c
+
+evenodds.lut: makelkup.exe
+	./makelkup.exe
+
+evenodds.exe: evenodds.c
+	$(CC) $(CFLAG) -o $@ evenodds.c
