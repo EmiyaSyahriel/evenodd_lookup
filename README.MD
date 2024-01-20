@@ -9,12 +9,12 @@ Take value prebaking to the extreme! inspired by "even-odd else ifs" meme. The r
 > Why TCC is used is because it's small and fast, and it generates small executable binary too.
 
 ### Command (`make` Version)
-> You can subtitute the `win32` to `linux` if you are in linux
 ```shell
 git clone https://github.com/EmiyaSyahriel/evenodd_lut
 cd evenodd_lut
-make -f Makefile.win32
+make
 ```
+> Makefile will automatically detect OS you're compiling in
 
 ### Command (Manual)
 > You can subtitute the `exe` to `elf`` if you are in linux
@@ -27,16 +27,16 @@ tcc -o evenoddl.exe evenoddl.c
 
 ## Usages
 > You can subtitute the `exe` to `elf`` if you are in linux
-- `makelkup.exe`
+### `makelkup.exe`
 Generates the lookup table
 
-- `evenodds.exe [number]` 
+### `evenodds.exe [number]` 
 Even-odd app using algorithm
 
-- `evenoddl.exe [number]`
-Even-odd app using lookup table. (requires)
+### `evenoddl.exe [number]`
+Even-odd app using lookup table. (requires `evenodds.lut`)
 
-- `evenodds.lut`
+### `evenodds.lut`
 Lookup table for the even odd app.
 
 ## License
