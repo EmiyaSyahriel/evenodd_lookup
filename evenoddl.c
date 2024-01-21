@@ -30,7 +30,7 @@ int main(int argc, const char** argv){
 	/* Reset the file position to 0 */
 	fseek(f, 0, SEEK_SET);
 	
-	/* Is found */
+	/* Is data found */
 	uint8_t found =  0;
 	
 	/* Read the file to the data variable until the read data count is no longer 1 */
@@ -47,7 +47,9 @@ int main(int argc, const char** argv){
 		}
 	}
 	
+	/*  If data not found */
 	if(!found){
+		/* Print error */
 		printf("data not found in lookup table: %d\n", s);
 	}
 	
