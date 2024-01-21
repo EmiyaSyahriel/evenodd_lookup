@@ -30,20 +30,29 @@ int main(int argc, const char** argv){
 	/* Reset the file position to 0 */
 	fseek(f, 0, SEEK_SET);
 	
-	/* Read the file to the data variable until the read byte size is no long the same as evenodd_t */
-	while(fread(&data, sizeof(evenodd_t), 1, f) == sizeof(evenodd_t))
+	/* Is found */
+	uint8_t found =  0;
+	
+	/* Read the file to the data variable until the read data count is no longer 1 */
+	while(fread(&data, sizeof(evenodd_t), 1, f) == 1)
 	{
 		/* Is number in LUT same as input number? */
 		if(s == data.number){
 			/* Print result */
 			printf("%s\n", data.iseven ? "even":"odd");
+			/* Set that data is found */
+			found = 1;
 			/* Get out of while loop right away */
 			break;
 		}
 	}
 	
+	if(!found){
+		printf("data not found in lookup table: %d\n", s);
+	}
+	
 	/* Close the lookup table file */
 	fclose(f);
 	/* Exit with code 0 (No error happended, success) */
-	return 0;
+	return !found;
 }
